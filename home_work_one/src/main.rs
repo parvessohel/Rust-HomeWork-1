@@ -1,8 +1,12 @@
-fn get_thing() {
-    println!("The value of X is an Idiot");
+fn get_sh1kari(x: i32) {
+    println!("The value of X is an Idiot {}", x);
 }
 
 fn main() {
-    let _ = get_thing(); // -> Here gething() function is called but "_" make sure that we don't need the return value of the function. "_" comes handy in these types of situations wehere we need to avoid side effects from the compiler.
-                         // Other examples could be: When only need to call a function where the function will only read a file or click a button. We don't need the return value of these function generally.
+    let x = 13;
+    get_sh1kari(x);
+    let x = x + 3;
+    get_sh1kari(x); // -> Here this is the second one. As soon as a new variable is declared with the same name the earlier one is dropped and cannot be accessed. This is called Shadowing in Rust
+                    // It is specailly useful if we want to change the type of the variable and we want to avoid declaring new variables with a different name to improve readability.
+                    // Shadowing essentially lets you create a new variable with the same name.
 }
