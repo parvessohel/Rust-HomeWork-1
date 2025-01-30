@@ -4,6 +4,6 @@ fn sh1kari(x: i32) {
 
 fn main() {
     let x;
-    sh1kari(x); // -> -> Compiler throws an error because `x` is used before being initialized
     x = 5;
+    sh1kari(x); // -> -> Compiler doesn't throw an error because `x` is used after being initialized
 }
