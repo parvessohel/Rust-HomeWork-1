@@ -1,3 +1,8 @@
+fn get_thing() {
+    println!("The value of X is an Idiot");
+}
+
 fn main() {
-    let _ = 5; // -> Here 5 is assigned to "_" to ignore compiler error. It is useful in some situations where you don't need the store the variable and avoid compiler error.
+    let _ = get_thing(); // -> Here gething() function is called but "_" make sure that we don't need the return value of the function. "_" comes handy in these types of situations wehere we need to avoid side effects from the compiler.
+                         // Other examples could be: When only need to call a function where the function will only read a file or click a button. We don't need the return value of these function generally.
 }
