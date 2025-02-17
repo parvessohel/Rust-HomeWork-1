@@ -7,6 +7,10 @@ fn main() {
     let smaller = std::cmp::min(4, 2); // Here std is a crate, cmp is a module, and min is a method. We can use those namespaces with double colon.
     println!("The Smaller number is {}", smaller);
 
-    let bigger = max(4, 2);  // We can use max directly because we imported it with "use" keyword above.
+    let bigger = max(4, 2); // We can use max directly because we imported it with "use" keyword above.
     println!("The Bigger numer is {}", bigger);
+
+    let name = "Sopa".to_string();
+    let size = str::len("sopa");
+    println!("The lenght of {} is {}", name, size);
 }
