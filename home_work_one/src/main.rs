@@ -1,16 +1,8 @@
-use std::cmp::max; // `use` is used to bring `max` into scope from the `std` crate's `cmp` module.
-                   // use std::cmp::min; // This imports min
-                   // use std::cmp::{max, min}; // We can also import like this.
-                   // use std::{cmp::max, cmp::min}; // This also imports `max` and `min`, same as above.
-                   // use std::cmp::*; This imports all items from the `cmp` module, including `min` and `max`.
 fn main() {
-    let smaller = std::cmp::min(4, 2); // Here std is a crate, cmp is a module, and min is a method. We can use those namespaces with double colon.
-    println!("The Smaller number is {}", smaller);
-
-    let bigger = max(4, 2); // We can use max directly because we imported it with "use" keyword above.
-    println!("The Bigger numer is {}", bigger);
-
-    let name = "Sopa".to_string();
-    let size = str::len("sopa");
-    println!("The lenght of {} is {}", name, size);
+    let name = "Shohel".to_string();
+    let mut v: Vec<String> = Vec::new();
+    v.push(name);
+    println!("{:?}", v);
+    let v: Vec<String> = std::vec::Vec::new(); // This works because Rust inserts use std::prelude::v1*; at the beginning of every module by default
+    println!("{:?}", v); //  so it exports many symbols like Vec, String, option , Result.
 }
