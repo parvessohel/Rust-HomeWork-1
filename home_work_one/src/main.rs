@@ -1,15 +1,18 @@
-fn main() {
-    let x = 4;
-    println!("Value of X is {}", x);
-    let x = { 42 }; // Same as the first one.
-    println!("Value of X is {}", x);
-
-    let x = {
-        // Curly braces in Rust define an expression block,
-        let y = 4;
-        let z = 2;
-        y + z // allowing multiple operations like performing complex calculations, function calls, loops, and if-else blocks etc..
+fn idiot(x: i32) -> i32 {
+    let original = x;
+    let x = if original != 0 {
+        original
+    } else {
+        original + 1
     };
 
     println!("Value of X is {}", x);
+    x + 38 // The `if-else` statement is an expression in Rust it evaluates to a value.
+}
+
+fn main() {
+    let x = 4;
+    println!("Value of X is {}", x);
+    let x = idiot(x);
+    println!("Value of x is {}", x);
 }
