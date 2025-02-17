@@ -1,18 +1,12 @@
-fn idiot(x: i32) -> i32 {
-    let original = x;
-    let x = if original != 0 {
-        original
-    } else {
-        original + 1
-    };
-
-    println!("Value of X is {}", x);
-    x + 38 // The `if-else` statement is an expression in Rust it evaluates to a value.
+fn idiot(x: String) -> String {
+    let size = x.len().to_string(); // We can also call a function with a dot like here.
+    size
 }
 
 fn main() {
-    let x = 4;
-    println!("Value of X is {}", x);
-    let x = idiot(x);
-    println!("Value of x is {}", x);
+    let x = (10, 11);
+    println!("The first value of x is {}", x.0); // This is how we access a field value in Rust using dot.
+    let sopa: String = "quickerthancoffee".to_string();
+    let size = idiot(sopa);
+    println!("Length of Sopa is {}", size)
 }
