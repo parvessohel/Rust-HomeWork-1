@@ -1,18 +1,15 @@
-fn value_of_x(z: i32) ->i32{                  // This is a function that takes a parameter z of i32 and also returns a value of i32. The arrow indicates that teh function has a return type.
-    println!("Value of x is {}", z);
-    z // This function returns z and we dont neeed to to use the keyword "return" or semicolon.
+fn value_of_x(x: i32) -> i32 {
+    println!("Value of x is {}", x);
+    x
 }
 
 fn main() {
     let x = 4;
-    let y = 2;
-    let z = x + y; // Semicolon marks the end of a statement.
-    let omega = value_of_x(z);
-    println!("Value of Omega is {}", omega);
 
-    let x = vec![4, 2, 0]
-    .iter()
-    .map(|x| x + 3)
-    .fold(0, |x, y| x + y); // This expression has multiple lines, but the semicolon at the end marks the end of the full statement.
-    println!("The value of x is {}", x);
+    let omega = value_of_x(x);
+    println!("Value of X and Omega is {} and {}", x, omega);
+    {
+        let x = vec![4, 2, 0].iter().map(|x| x + 3).fold(0, |x, y| x + y);
+        println!("The value of x is {}", x); // This x and the previous x are different. This x is inside of a curly braces. That mean it is inside a block of its own.
+    }
 }
