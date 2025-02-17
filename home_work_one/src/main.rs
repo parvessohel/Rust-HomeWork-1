@@ -1,8 +1,10 @@
 fn main() {
-    let name = "Shohel".to_string();
-    let mut v: Vec<String> = Vec::new();
-    v.push(name);
-    println!("{:?}", v);
-    let v: Vec<String> = std::vec::Vec::new(); // This works because Rust inserts use std::prelude::v1*; at the beginning of every module by default
-    println!("{:?}", v); //  so it exports many symbols like Vec, String, option , Result.
+    #[derive(Debug)]
+    struct Vec2 {
+        // Structs are declared here.
+        x: i32,
+        y: i32,
+    }
+    let x1 = Vec2 { x: 4, y: 2 }; // Here Structs are initialized.
+    println!("Value of x is {:?}", x1);
 }
